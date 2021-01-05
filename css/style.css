@@ -1,0 +1,648 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* GENERAL RULES */
+body {
+font-size: 14px;
+font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+margin: 10px 0;
+color: #fff;
+}
+
+main {
+height: calc(100vh - 90px);
+}
+
+main::after {
+content: '';
+display: table;
+clear: both;
+}
+
+section {
+margin-bottom: 30px;
+}
+
+a {
+color: #717171;
+text-decoration: none;
+font-weight: 600;
+transition: .2s;
+}
+
+a:hover {
+color: #fff;
+}
+
+a.ms_active-link {
+color: #fff;
+}
+
+ul {
+list-style-type: none;
+}
+
+.ms_wrapper {
+height: 100vh;
+color: #ccc;
+min-width: 360px;
+}
+
+.ms_rounded {
+border-radius: 50%;
+}
+/* END GENERAL RULES */
+/*===================*/
+
+/*===============*/
+/* BEGIN SIDEBAR */
+.ms_sidebar {
+float: left;
+width: 50px;
+height: 100%;
+background-color: #000;
+overflow: hidden;
+text-align: center;
+}
+
+.ms_sidebar-top {
+height: calc(100% - 100px);
+min-height: 320px;
+overflow-y: hidden;
+}
+
+/* logo */
+.ms_logo img { padding: 10px; }
+.ms_logo img.ms_big { display: none; }
+.ms_logo img.ms_small { width: 50px; }
+
+
+/* main navigation */
+.ms_main-navigation li {
+position: relative;
+}
+
+.ms_main-navigation li a {
+display: block;
+padding: 10px;
+}
+
+.ms_main-navigation li img {
+display: inline;
+height: 25px;
+vertical-align: middle;
+}
+
+.ms_main-nav-text {
+display: none;
+}
+
+.ms_main-navigation a span:first-child {
+display: inline-block;
+position: absolute;
+top: 0;
+left: -6px;
+transform: translateX(-50%);
+width: 5px;
+height: 45px;
+background-color: #adff2f;
+transition: left .3s ease-in-out;
+}
+
+.ms_main-navigation li span.ms_active:first-child {
+display: none;
+left: 2px;
+}
+
+.ms_main-navigation li:hover span:first-child {
+left: 2px;
+}
+
+/* PLaylist */
+.ms_playlist {
+display: none;
+padding: 15px;
+}
+
+.ms_add-list-item a {
+display: block;
+}
+
+.ms_add-list-item a:hover .ms_plus {
+background-color: #fff;
+}
+
+.ms_add-list-item .ms_plus {
+display: inline-block;
+color: #000;
+background-color: #717171;
+padding: 10px 12px;
+font-size: 1.5em;
+transition: .2s;
+}
+
+.ms_list-item {
+overflow: auto;
+height: calc(100vh - 500px);
+margin-bottom: 10px;
+scrollbar-color: #adff2f #282828;
+scrollbar-width: thin;
+}
+
+.ms_list-item li {
+padding: 10px 0;
+}
+
+/* install app */
+.ms_sidebar-bottom {
+text-align: center;
+}
+
+.ms_install-app {
+padding: 10px 0;
+margin-top: 50px;
+}
+
+.ms_sidebar-bottom  img {
+vertical-align: middle;
+}
+
+.ms_sidebar-bottom .ms_install-app img {
+width: 25px;
+margin-left: -5px;
+}
+/* END SIDEBAR */
+/*=============*/
+
+/*====================*/
+/* BEGIN MAIN CONTENT */
+.ms_main-content {
+float: left;
+width: calc(100% - 50px);
+height: 100%;
+background: linear-gradient(#0F2027, #203A43, #2C5364);
+overflow-y: auto;
+scrollbar-color: #adff2f #282828;
+scrollbar-width: thin;
+}
+
+.ms_top-panel {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+background-color: #00000091;
+height: 90px;
+position: fixed;
+top: 0;
+right: 0;
+width: calc(100% - 50px);
+z-index: 100;
+}
+
+.ms_upgrade-btn {
+padding: 10px 20px;
+border: 1px solid #fff;
+color: #fff;
+text-transform: uppercase;
+border-radius: 25px;
+margin: 0 40px;
+background-color: #0000004d;
+font-size: 0.8em;
+text-align: center;
+transition: .2s ease-in-out;
+}
+
+.ms_upgrade-btn:hover {
+transform: scale(1.07);
+}
+
+/* main content box */
+.ms_content-box {
+padding: 100px 20px 20px;
+}
+
+.ms_content-box ul.ms_content-navigation {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-content: space-between;
+margin-bottom: 40px;
+}
+
+.ms_content-navigation>li {
+margin-right: 10px;
+position: relative;
+}
+
+.ms_content-navigation>li:last-child {
+margin-right: 0;
+}
+
+.ms_content-navigation li span:first-child {
+display: inline-block;
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 0%;
+height: 5px;
+background-color: #adff2f;
+transition: width.2s ease-in-out;
+}
+
+.ms_content-navigation li span.ms_active:first-child  {
+width: 50%;
+}
+
+.ms_content-navigation li:hover span:first-child {
+width: 50%;
+}
+
+
+.ms_content-box a {
+display: inline-block;
+text-transform: uppercase;
+padding: 10px;
+}
+
+/* thumbnail wrap */
+.ms_section-intro {
+margin-bottom: 20px;
+}
+
+.ms_section-intro h2 {
+margin-bottom: 5px;
+}
+
+#recently-played ul,
+#created-for-user ul,
+#popular-artists ul {
+display: flex;
+flex-wrap: wrap;
+margin-left: -10px;
+}
+
+li.ms_thumbnail-wrap {
+flex-basis: calc(50% - 10px);
+text-align: center;
+cursor: pointer;
+margin: 0 0 30px 10px;
+}
+
+li.ms_thumbnail-wrap img {
+width: 100%;
+}
+
+.ms_thumbnail-wrap .ms_title {
+font-size: 1.3em;
+}
+
+.ms_thumbnail-wrap .ms_subtitle {
+font-size: 1.1em;
+}
+
+.ms_thumbnail-image {
+position: relative;
+}
+
+.ms_thumbnail-image  .ms_thumbnail-overlay {
+display: inline-block;
+position: absolute;
+width: 100%;
+height: 0%;
+background-color: #000000a8;
+transition: all .3s ease;
+}
+
+.ms_thumbnail-image  .ms_thumbnail-overlay i {
+opacity: 0%;
+color: #fff;
+font-size: 4em;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+overflow: hidden;
+transition: opacity .1s ease-out .1s;
+}
+
+.ms_thumbnail-wrap:hover .ms_thumbnail-overlay  {
+height: 99%;
+}
+
+.ms_thumbnail-wrap:hover  .ms_thumbnail-overlay i {
+opacity: 100%;
+}
+/* END MAIN CONTENT */
+/*==================*/
+
+/*==============*/
+/* BEGIN FOOTER */
+.ms_player {
+width: 100%;
+height: 90px;
+color: #fff;
+background-color: #282828;
+display: flex;
+justify-content: space-between;
+font-size: 0.9em;
+}
+
+.ms_player i {
+cursor: pointer;
+}
+
+.ms_player > div {
+padding: 15px 10px;
+align-self: center;
+}
+
+.album .names,
+.album .ms_somthing,
+.album img {
+display: inline-block;
+vertical-align: middle;
+}
+
+/* Album */
+.album {
+flex-basis: 25%;
+min-width: 150px;
+}
+
+.album img {
+width: 50px;
+margin-right: 5px;
+}
+.album .album-title,
+.album .song-title,
+.album .favorites {
+line-height: 15px;
+}
+
+.album .song-title {
+font-size: 0.8em;
+color:#717171;
+}
+
+.album .song-title a:hover {
+text-decoration: underline;
+}
+
+.album .favorites i {
+margin-left: 5px;
+font-size: 1.1em;
+}
+
+/* PLayer Controls */
+.player-controls {
+text-align: center;
+flex-basis: 50%;
+}
+
+.player-buttons i {
+margin: 0 5px;
+font-size: 1.1em;
+vertical-align: middle;
+}
+
+.player-buttons i.fa-play-circle {
+font-size: 1.8em;
+margin: 0 10px;
+}
+
+.player-buttons i.fa-play-circle:hover {
+transform: scale(1.2);
+}
+
+.player-controls {
+flex-grow: 2;
+min-width: 200px;
+}
+
+.song-time-bar .current-time,
+.song-time-bar .control-bar-mixed,
+.ms_player .whole-bar,
+.ms_player .active-part-bar,
+.ms_player .control-bar-circle
+.song-time-bar .end-time,
+.volume-controls .volume-bar {
+display: inline-block;
+}
+
+.ms_player .control-bar-mixed {
+position: relative;
+width: 55%;
+cursor: pointer;
+}
+
+.ms_player .whole-bar,
+.ms_player .active-part-bar {
+vertical-align: middle;
+width: 100%;
+height: 4px;
+border-radius: 4px;
+background-color: #717171;
+}
+
+.ms_player .active-part-bar {
+position: absolute;
+top: 6px;
+left: 0;
+width: 22%;
+background-color: #fff;
+
+}
+
+.control-bar-mixed .control-bar-circle {
+display: none;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+position: absolute;
+top: 0px;
+left: 20%;
+background-color: #fff;
+cursor: pointer;
+}
+
+.control-bar-mixed:hover .active-part-bar {
+background-color: #adff2f;
+}
+
+.control-bar-mixed:hover .control-bar-circle {
+display: inline-block;
+}
+
+.song-time-bar [class*="time"] {
+margin: 5px;
+font-size: 0.8em;
+}
+
+/* Volume controls */
+.volume-controls {
+display: none;
+flex-basis: 25%;
+text-align: right;
+min-width: 100px;
+}
+
+.volume-controls i {
+font-size: 0.9em;
+margin-right: 10px;
+}
+
+.volume-controls .volume-bar {
+vertical-align: middle;
+width: 50%;
+min-width: 10%;
+height: 4px;
+border-radius: 4px;
+background-color: #717171;
+}
+
+.volume-controls .top-volume-controls,
+.volume-controls .bottom-volume-controls {
+display: block;
+line-height: 15px;
+}
+
+.bottom-volume-controls .control-bar-mixed {
+width: 50%;
+}
+
+.bottom-volume-controls .whole-bar {
+width: 50%;
+}
+/* END FOOTER */
+/*============*/
+
+/*==================*/
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #282828;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #adff2f;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #adff2f;
+}
+/*=====================*/
+/* === MEDIA QUERY === */
+
+/* ===== XXS ===== */
+@media screen and (min-width: 450px) {
+.volume-controls {
+    display: block;
+}
+
+
+/* ===== XS ===== */
+@media screen and (min-width: 556px) {
+/* sidebar */
+.ms_sidebar {
+    width: 230px;
+    text-align: left;
+}
+
+.ms_main-nav-text {
+    display: inline;
+}
+
+.ms_logo img {
+    padding: 20px;
+}
+
+.ms_logo img.ms_big {
+    display: inline;
+    width: 150px;
+}
+
+.ms_logo img.ms_small {
+    display: none
+}
+
+.ms_main-navigation li a {
+    display: block;
+    padding: 10px 15px;
+}
+
+.ms_main-navigation li span.ms_active:first-child {
+    display: inline;
+    left: 2px;
+}
+
+.ms_playlist {
+    display: block;
+}
+
+/*sidebar-bottom*/
+.ms_sidebar-bottom {
+    padding: 0 15px;
+}
+
+.ms_install-app,
+.ms_user {
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+    text-align: left;
+}
+
+.ms_sidebar-bottom div:last-child {
+    border-bottom: none;
+}
+
+/* main-content */
+.ms_main-content { width: calc(100% - 230px); }
+.ms_top-panel { width: calc(100% - 230px); }
+
+}
+
+/* ===== SM ===== */
+@media screen and (min-width: 768px) {
+li.ms_thumbnail-wrap {
+    flex-basis: calc((100% / 3) - 10px );
+}
+
+.album .favorites {
+    display: inline-block;
+}
+
+.volume-controls .top-volume-controls,
+.volume-controls .bottom-volume-controls {
+    display: inline;
+}
+}
+
+/* ===== MD ===== */
+@media screen and (min-width: 992px) {
+li.ms_thumbnail-wrap {
+    flex-basis: calc((100% / 4) - 10px );
+}
+}
+
+/* ===== LG ===== */
+@media screen and (min-width: 1170px) {
+    li.ms_thumbnail-wrap {
+    flex-basis: calc((100% / 6) - 10px );
+}
+}
